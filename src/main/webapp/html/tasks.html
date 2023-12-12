@@ -14,10 +14,10 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="task, number : ${tasks}">
-        < th:text="${task.id}" />
-        < th:text="${task.description}" th:id="'description_' + ${task.id}" />
-        < span th:text="${task.status}" th:id="'status_' + ${task.id}" />
+    <tr th:each="task,number : ${tasks}">
+        <td th:text="${task.id}" />
+        <td th:text="${task.description}" th:id="'description_' + ${task.id}" />
+        <td span th:text="${task.status}" th:id="'status_' + ${task.id}" />
     </tr>
     </tbody>
 </table>

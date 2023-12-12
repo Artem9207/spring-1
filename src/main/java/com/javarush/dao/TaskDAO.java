@@ -25,7 +25,7 @@ public class TaskDAO {
 
     @Transactional(readOnly = true, propagation = Propagation.REQUIRED)
     public List<Task> getAll(int offset, int limit) {
-        Query<Task> query = getSessionFactory().createQuery("SELECT T FROM Task t", Task.class);
+        Query<Task> query = getSessionFactory().createQuery("SELECT t FROM Task t", Task.class);
         query.setFirstResult(offset);
         query.setMaxResults(limit);
         return query.getResultList();
@@ -33,7 +33,7 @@ public class TaskDAO {
 
     @Transactional(readOnly = true, propagation = Propagation.REQUIRED)
     public int getAllCount() {
-        Query<Long> query = getSessionFactory().createQuery("SELECT COUNT(T) FROM Task t", Long.class);
+        Query<Long> query = getSessionFactory().createQuery("SELECT COUNT(t) FROM Task t", Long.class);
         return Math.toIntExact(query.uniqueResult());
     }
 

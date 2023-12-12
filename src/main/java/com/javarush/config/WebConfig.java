@@ -27,7 +27,7 @@ public class WebConfig implements WebMvcConfigurer {
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver resolver =new SpringResourceTemplateResolver();
         resolver.setApplicationContext(applicationContext);
-        resolver.setPrefix("/src/main/webbApp/html/");
+        resolver.setPrefix("/html/");
         resolver.setSuffix(".html");
         resolver.setTemplateMode(TemplateMode.HTML);
         resolver.setCacheable(false);
@@ -57,7 +57,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/style/**").addResourceLocations("/style/");
-        registry.addResourceHandler("/src/main/webbApp/html/**").addResourceLocations("/src/main/webbApp/html/");
+        registry.addResourceHandler("/html/**").addResourceLocations("/html/");
         registry.addResourceHandler("/script/**").addResourceLocations("/script/");
     }
 }

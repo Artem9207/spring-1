@@ -27,7 +27,7 @@ public class AppConfig {
 
     private Properties hibernateProperties() {
         Properties properties = new Properties();
-        properties.put(Environment.DIALECT, "org.dialect.hibernateMySQLDialect");
+        properties.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");
         properties.put(Environment.DRIVER, "com.p6spy.engine.spy.P6spyDriver");
         properties.put(Environment.HBM2DDL_AUTO, "validate");
         return properties;
@@ -36,7 +36,7 @@ public class AppConfig {
     @Bean
     public DataSource dataSource() {
         HikariDataSource dataSource = new HikariDataSource();
-        dataSource.setDriverClassName("com.p6spy.engine.spy.P6spyDriver");
+        dataSource.setDriverClassName("com.p6spy.engine.spy.P6SpyDriver");
         dataSource.setJdbcUrl("jdbc:p6spy:mysql://localhost:3306/todo");
         dataSource.setUsername("root");
         dataSource.setPassword("Ordinarypass1"); //your password
