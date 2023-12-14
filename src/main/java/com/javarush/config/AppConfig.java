@@ -39,7 +39,7 @@ public class AppConfig {
         dataSource.setDriverClassName("com.p6spy.engine.spy.P6SpyDriver");
         dataSource.setJdbcUrl("jdbc:p6spy:mysql://localhost:3306/todo");
         dataSource.setUsername("root");
-        dataSource.setPassword("Ordinarypass1"); //your password
+        dataSource.setPassword(""); //your password
         dataSource.setMaximumPoolSize(10);
         return dataSource;
     }

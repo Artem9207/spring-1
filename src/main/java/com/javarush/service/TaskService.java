@@ -34,7 +34,7 @@ public class TaskService {
         }
         task.setDescription(description);
         task.setStatus(status);
-        taskDAO.edit(task);
+        taskDAO.saveOrUpdate(task);
         return task;
     }
 
@@ -42,7 +42,7 @@ public class TaskService {
         Task task = new Task();
         task.setDescription(description);
         task.setStatus(status);
-        taskDAO.edit(task);
+        taskDAO.saveOrUpdate(task);
         return task;
     }
 
